@@ -2,10 +2,8 @@ import { HeadContent, Scripts, createRootRoute } from '@tanstack/react-router'
 import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
 import { TanStackDevtools } from '@tanstack/react-devtools'
 
-import Header from '../components/Header'
-
 import appCss from '../styles.css?url'
-import { Background } from '@/components/Background'
+import { ThemeProvider, themeScript } from '@/components/theme-provider'
 
 export const Route = createRootRoute({
   head: () => ({
@@ -18,7 +16,7 @@ export const Route = createRootRoute({
         content: 'width=device-width, initial-scale=1',
       },
       {
-        title: 'TanStack Start Starter',
+        title: 'cabu.la | Spatial Workbench',
       },
     ],
     links: [
@@ -34,15 +32,16 @@ export const Route = createRootRoute({
 
 function RootDocument({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <HeadContent />
+        <script
+          suppressHydrationWarning
+          dangerouslySetInnerHTML={{ __html: themeScript }}
+        />
       </head>
       <body>
-        {/* <Header /> */}
-        <Background>
-          {children}
-        </Background>
+        <ThemeProvider>{children}</ThemeProvider>
         <TanStackDevtools
           config={{
             position: 'bottom-right',

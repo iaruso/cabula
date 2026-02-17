@@ -1,92 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap');
 @import 'tailwindcss';
-
 @import 'tw-animate-css';
 
 @custom-variant dark (&:is(.dark *));
 
-body {
-  @apply m-0 h-dvh w-dvw;
-  font-family:
-    -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
-    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family:
-    source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
-}
-
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.141 0.005 285.823);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.141 0.005 285.823);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.141 0.005 285.823);
-  --primary: oklch(0.21 0.006 285.885);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.967 0.001 286.375);
-  --secondary-foreground: oklch(0.21 0.006 285.885);
-  --muted: oklch(0.967 0.001 286.375);
-  --muted-foreground: oklch(0.552 0.016 285.938);
-  --accent: oklch(0.967 0.001 286.375);
-  --accent-foreground: oklch(0.21 0.006 285.885);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.577 0.245 27.325);
-  --border: oklch(0.92 0.004 286.32);
-  --input: oklch(0.92 0.004 286.32);
-  --ring: oklch(0.871 0.006 286.286);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.141 0.005 285.823);
-  --sidebar-primary: oklch(0.21 0.006 285.885);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.967 0.001 286.375);
-  --sidebar-accent-foreground: oklch(0.21 0.006 285.885);
-  --sidebar-border: oklch(0.92 0.004 286.32);
-  --sidebar-ring: oklch(0.871 0.006 286.286);
+  --background: #ffffff;
+  --foreground: #09090b;
+  --card: #ffffff;
+  --card-foreground: #09090b;
+  --popover: #ffffff;
+  --popover-foreground: #09090b;
+  --primary: #09090b;
+  --primary-foreground: #fafafa;
+  --secondary: #f4f4f5;
+  --secondary-foreground: #09090b;
+  --muted: #f4f4f5;
+  --muted-foreground: #52525b;
+  --accent: #f4f4f5;
+  --accent-foreground: #09090b;
+  --destructive: #b91c1c;
+  --destructive-foreground: #fafafa;
+  --border: #d4d4d8;
+  --input: #d4d4d8;
+  --ring: #71717a;
+  --chart-1: #18181b;
+  --chart-2: #27272a;
+  --chart-3: #3f3f46;
+  --chart-4: #71717a;
+  --chart-5: #a1a1aa;
+  --radius: 0.125rem;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #09090b;
+  --sidebar-primary: #09090b;
+  --sidebar-primary-foreground: #fafafa;
+  --sidebar-accent: #f4f4f5;
+  --sidebar-accent-foreground: #09090b;
+  --sidebar-border: #d4d4d8;
+  --sidebar-ring: #71717a;
+  --grid-dot: rgb(161 161 170 / 42%);
 }
 
 .dark {
-  --background: oklch(0.141 0.005 285.823);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.141 0.005 285.823);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.141 0.005 285.823);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.985 0 0);
-  --primary-foreground: oklch(0.21 0.006 285.885);
-  --secondary: oklch(0.274 0.006 286.033);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.274 0.006 286.033);
-  --muted-foreground: oklch(0.705 0.015 286.067);
-  --accent: oklch(0.274 0.006 286.033);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.396 0.141 25.723);
-  --destructive-foreground: oklch(0.637 0.237 25.331);
-  --border: oklch(0.274 0.006 286.033);
-  --input: oklch(0.274 0.006 286.033);
-  --ring: oklch(0.442 0.017 285.786);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.21 0.006 285.885);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.274 0.006 286.033);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(0.274 0.006 286.033);
-  --sidebar-ring: oklch(0.442 0.017 285.786);
+  --background: #09090b;
+  --foreground: #fafafa;
+  --card: #09090b;
+  --card-foreground: #fafafa;
+  --popover: #09090b;
+  --popover-foreground: #fafafa;
+  --primary: #fafafa;
+  --primary-foreground: #09090b;
+  --secondary: #18181b;
+  --secondary-foreground: #fafafa;
+  --muted: #18181b;
+  --muted-foreground: #a1a1aa;
+  --accent: #18181b;
+  --accent-foreground: #fafafa;
+  --destructive: #ef4444;
+  --destructive-foreground: #fafafa;
+  --border: #3f3f46;
+  --input: #3f3f46;
+  --ring: #d4d4d8;
+  --chart-1: #fafafa;
+  --chart-2: #e4e4e7;
+  --chart-3: #d4d4d8;
+  --chart-4: #a1a1aa;
+  --chart-5: #71717a;
+  --sidebar: #09090b;
+  --sidebar-foreground: #fafafa;
+  --sidebar-primary: #fafafa;
+  --sidebar-primary-foreground: #09090b;
+  --sidebar-accent: #18181b;
+  --sidebar-accent-foreground: #fafafa;
+  --sidebar-border: #3f3f46;
+  --sidebar-ring: #d4d4d8;
+  --grid-dot: rgb(228 228 231 / 22%);
 }
 
 @theme inline {
@@ -114,10 +102,10 @@ code {
   --color-chart-3: var(--chart-3);
   --color-chart-4: var(--chart-4);
   --color-chart-5: var(--chart-5);
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: var(--radius);
+  --radius-md: var(--radius);
   --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
+  --radius-xl: var(--radius);
   --color-sidebar: var(--sidebar);
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar-primary: var(--sidebar-primary);
@@ -133,69 +121,62 @@ code {
     @apply border-border outline-ring/50;
     box-sizing: border-box;
   }
+
+  html,
   body {
-    @apply bg-background text-foreground;
+    @apply m-0 min-h-dvh bg-background text-foreground antialiased;
   }
 
-  #custom-bg{
-    flex:1;
-    height:100%;
-    position:relative;
-    background:#161819;
-    overflow:hidden;
-
-    --cell: 20px;
-    --dot: 1px;
-    --dot-min: #1a1c1e;
-    --dot-max: #1d1f20;
-
-    --mx: 50%;
-    --my: 50%;
+  body,
+  button,
+  input,
+  select,
+  textarea {
+    font-family:
+      'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+      'Liberation Mono', monospace;
   }
 
-  #custom-bg::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    pointer-events:none;
-    z-index: 0;
+  #__root {
+    min-height: 100dvh;
+  }
 
+  .react-flow__node {
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+
+  .react-flow__node.selected {
+    box-shadow: 0 0 0 1px var(--foreground) !important;
+  }
+
+  .react-flow__edge-path {
+    stroke: var(--muted-foreground);
+    stroke-width: 1;
+  }
+
+  .react-flow__handle {
+    width: 8px;
+    height: 8px;
+    border: 1px solid var(--foreground);
+    border-radius: 0;
+    background: var(--background);
+  }
+}
+
+@layer utilities {
+  .wireframe-grid {
+    background-color: var(--background);
     background-image: radial-gradient(
-      circle,
-      color-mix(in srgb, var(--dot-min) 80%, transparent) var(--dot),
-      transparent calc(var(--dot) + 0.5px)
+      circle at center,
+      var(--grid-dot) 1px,
+      transparent 1px
     );
-    background-size: var(--cell) var(--cell);
-    background-position: 0 0;
-    background-repeat: repeat;
+    background-size: 16px 16px;
+    background-position: -1px -1px;
   }
 
-  #custom-bg::after{
-    content:"";
-    position:absolute;
-    inset:0;
-    pointer-events:none;
-    z-index: 0;
-    background: radial-gradient(circle at var(--mx) var(--my),
-      color-mix(in srgb, var(--dot-max) 80%, transparent) 0%,
-      color-mix(in srgb, var(--dot-max) 50%, transparent) 24%,
-      transparent 58%
-    );
-
-    -webkit-mask-image: radial-gradient(circle, #000 var(--dot), transparent calc(var(--dot) + 0.5px));
-    -webkit-mask-size: var(--cell) var(--cell);
-    -webkit-mask-repeat: repeat;
-    -webkit-mask-position: 0 0;
-
-    mask-image: radial-gradient(circle, #000 var(--dot), transparent calc(var(--dot) + 0.5px));
-    mask-size: var(--cell) var(--cell);
-    mask-repeat: repeat;
-    mask-position: 0 0;
+  .section-label {
+    @apply text-[11px] font-semibold uppercase tracking-[0.22em] text-muted-foreground;
   }
-
-  #custom-bg > * {
-    position: relative;
-    z-index: 1;
-  }
-
 }
