@@ -15,7 +15,6 @@ export function AppShell({ locale }: AppShellProps) {
 
   return (
     <div className="min-h-dvh bg-background text-foreground">
-      <WorkbenchSidebar />
 
       <div className="pointer-events-none fixed right-3 top-4 z-30 hidden items-center gap-2 lg:flex">
         <p className="section-label pr-1 text-foreground/70">
@@ -26,7 +25,9 @@ export function AppShell({ locale }: AppShellProps) {
             {locales.map((option) => (
               <Link
                 key={option}
-                to="/{-$locale}/"
+                // @ts-ignore
+                to="/{$locale}/"
+                // @ts-ignore
                 params={{ locale: option }}
                 className={cn(
                   'px-2 py-1 text-[11px] uppercase tracking-[0.2em] transition-colors',
