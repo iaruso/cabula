@@ -147,7 +147,7 @@ export const AccordionTrigger = React.forwardRef<
         data-state={isOpen ? 'open' : 'closed'}
         onClick={() => toggleItem(value)}
         className={cn(
-          'flex w-full items-center justify-between gap-4 px-4 py-3 text-left text-[11px] font-semibold uppercase tracking-[0.14em] transition-colors hover:bg-muted',
+          'flex w-full items-center justify-between gap-4 py-4 text-left text-sm font-medium transition-all hover:underline',
           className,
         )}
         {...props}
@@ -180,7 +180,7 @@ export const AccordionContent = React.forwardRef<
       aria-labelledby={triggerId}
       data-state={isOpen ? 'open' : 'closed'}
       hidden={!isOpen}
-      className={cn('px-4 pb-4', className)}
+      className={cn('overflow-hidden text-sm', className)}
       {...props}
     >
       {children}
